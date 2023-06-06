@@ -40,8 +40,8 @@ let block_card;
 let card_counter = 0;
 let movements = 0;
 let successful_attempts = 0;
-let time = 40;
-let total_time = 40;
+let time = 30;
+let total_time = 30;
 let timer = false;
 
 cards.addEventListener('click', find_index);
