@@ -1,0 +1,112 @@
+:root{
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'ubuntu', sans-serif;
+}
+body{
+    /* background: rgb(63,94,251); */
+    background: radial-gradient(circle, rgba(63,94,251.1) 0%, rgba(252,70,107) 100%);
+    color: white;
+}
+
+.main-container{
+    display: grid;
+    width: 90vw;
+    max-width: 400px;
+    height: 85vh;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    margin: 0 auto;
+    margin-top: 5vh;
+    text-align: center;
+    background-color: rgba(255, 255,255, 0.2);
+    border-radius: 8px;
+}
+header{
+    align-self: flex-end;
+}
+.cards-section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+    width: 80vw;
+    max-width: 350px;
+    height: 82%;
+    max-height: 500px;
+    justify-self: center;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/* div{
+    
+    list-style: none;
+} */
+.card{
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+/* .card:hover{
+} */
+.side-container{
+    display: grid;
+    width: 76vh;
+    height: 25vh;
+    max-width: 260px;
+    font-size: var(--lg);
+    margin: 0 auto;
+    align-items: center;
+    padding: 5px 5px 5px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, alpha);
+}
+/* .statistics{
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px 5px;
+} */
+footer{
+    display: flex;
+    width: 90vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: aqua;
+}
+.visible{
+    display: none;
+}
+.play-again{
+    position: absolute;
+    width: 100px;
+    top: 35vh;
+    left: calc(50% - 50px);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    border-radius: 8px;
+    border: 1px solid gray;
+    margin: 0;
+    padding: 5px 20px;
+    color: white;
+    cursor: pointer;
+}
+/* .play-again:hover{
+} */
+img{
+    width: 65%;
+    
+}

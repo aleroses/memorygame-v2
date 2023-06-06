@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 680px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
+    <title>Memory Game</title>
+</head>
+<body>
+    <main class="main-container">
+        <header>
+            <h1>Memory Game</h1>
+        </header>
+        <section id="cards" class="cards-section">
+            <div><button id="0" class="card"></button></div>
+            <div><button id="1" class="card"></button></div>
+            <div><button id="2" class="card"></button></div>
+            <div><button id="3" class="card"></button></div>
+            <div><button id="4" class="card"></button></div>
+            <div><button id="5" class="card"></button></div>
+            <div><button id="6" class="card"></button></div>
+            <div><button id="7" class="card"></button></div>
+            <div><button id="8" class="card"></button></div>
+            <div><button id="9" class="card"></button></div>
+            <div><button id="10" class="card"></button></div>
+            <div><button id="11" class="card"></button></div>
+            <div><button id="12" class="card"></button></div>
+            <div><button id="13" class="card"></button></div>
+            <div><button id="14" class="card"></button></div>
+            <div><button id="15" class="card"></button></div>
+        </section>
+        <aside class="side-container">
+            <p id="successful-attempts" class="statistics">Successful attempts: 0</p>
+            <p id="time-left" class="statistics">Time: 30 seconds</p>
+            <p id="movements" class="statistics">Movements: 0</p>
+        </aside>
+        <button class="play-again visible">Play again</button>
+    </main>
+    <footer>
+        <p>Game developed by <a href="https://github.com/aleroses">Ale Roses</a></p>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>
