@@ -23,8 +23,8 @@ let clic_audio = new Audio('./sound/clic.wav');
 let right_audio = new Audio('./sound/right.wav');
 let wrong_audio = new Audio('./sound/wrong.wav');
 
-let numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
-let random = numbers.toSorted(()=> Math.random() - 0.5);
+let numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+let random = numbers.toSorted(() => Math.random() - 0.5);
 console.log(random);
 
 let card;
@@ -47,23 +47,23 @@ let timer = false;
 cards.addEventListener('click', find_index);
 b_reset.addEventListener('click', reset_game);
 
-function find_index(event){
-    if(event.target.tagName == 'BUTTON'){
+function find_index(event) {
+    if (event.target.tagName == 'BUTTON') {
         card = document.getElementsByTagName('div');
         index = Array.prototype.indexOf.call(card, event.target.parentNode);
     }
     show_card(index);
 }
 
-function show_card(index){
-    if(timer == false){
+function show_card(index) {
+    if (timer == false) {
         measure_time();
         timer = true;
     }
-    
+
     card_counter++;
 
-    if(card_counter == 1){
+    if (card_counter == 1) {
         card_one = document.getElementById(index);
         first_result = random[index]
         card_one.innerHTML = `<img src="./image/${first_result}.png" alt="">`;
@@ -71,7 +71,7 @@ function show_card(index){
         clic_audio.play();
 
         card_one.disabled = true;
-    }else if(card_counter == 2){
+    } else if (card_counter == 2) {
         card_two = document.getElementById(index);
         second_result = random[index];
         card_two.innerHTML = `<img src="./image/${second_result}.png" alt="">`;
@@ -81,7 +81,7 @@ function show_card(index){
         movements++;
         p_movements.innerText = `Movements: ${movements}`;
 
-        if(first_result == second_result){
+        if (first_result == second_result) {
             card_counter = 0;
 
             successful_attempts++;
@@ -89,7 +89,7 @@ function show_card(index){
 
             right_audio.play();
 
-            if(successful_attempts == 8){
+            if (successful_attempts == 8) {
                 clearInterval(time_controller);
                 win_audio.play();
 
@@ -99,16 +99,18 @@ function show_card(index){
 
                 b_reset.classList.toggle('visible');
             }
-        }else{
+        } else {
             wrong_audio.play();
 
             setTimeout(() => {
-                card_counter = 0;
+                if (time > 0) {
+                    card_counter = 0;
 
-                card_one.innerText = ' ';
-                card_two.innerText = ' ';
-                card_one.disabled = false;
-                card_two.disabled = false;
+                    card_one.innerText = ' ';
+                    card_two.innerText = ' ';
+                    card_one.disabled = false;
+                    card_two.disabled = false;
+                }
             }, 800)
 
             /* if(time == 0){
@@ -120,12 +122,12 @@ function show_card(index){
     console.log(card_counter);
 }
 
-function measure_time(){
+function measure_time() {
     time_controller = setInterval(() => {
         time--;
         p_time_left.innerText = `Time: ${time} seconds`
-        
-        if(time <= 0){
+
+        if (time <= 0) {
             b_reset.classList.toggle('visible')
             clearInterval(time_controller);
             show_and_lock_card();
@@ -136,14 +138,14 @@ function measure_time(){
     }, 1000);
 }
 
-function show_and_lock_card(){
-    for(let i=0; i<= 15; i++){
+function show_and_lock_card() {
+    for (let i = 0; i <= 15; i++) {
         block_card = document.getElementById(i);
         block_card.innerHTML = `<img src="./image/${random[i]}.png" alt="">`;
         block_card.disabled = true;
     }
 }
 
-function reset_game(){
+function reset_game() {
     location.reload();
 }
